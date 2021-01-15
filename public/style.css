@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+.container {
+    width: 100vw;
+    height: 50vh;
+    min-height: 700px;
+}
+
+.gameContainer {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.playerContainer {
+    width: 600px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.boardContainer {
+    height: 500px;
+    width: 500px;
+}
+
+.buttonContainer {
+    align-self: center;
+}
+
+.boardContainer--grid {
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+}
+
+.grid--item {
+    border: 1px solid black;
+}
+
+.boardContainer--ships {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 300px;
+    width: 500px;
+    margin: 10px auto 0 auto;
+    border: 1px solid black;
+}
