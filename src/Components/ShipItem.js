@@ -4,7 +4,7 @@ const ShipItem = (props) => {
     
     let divs = [];
     for(let i = 0; i < props.size; i++) {
-        divs.push((<div className='grid--item'></div>));
+        divs.push((<div key={i} className='grid--item'></div>));
     } 
     return (
         <div

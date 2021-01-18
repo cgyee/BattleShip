@@ -1,6 +1,14 @@
-const GridItem = () => {
+import React from 'react';
+
+const GridItem = (props) => {
     return (
-        <div className="grid--item" onDragOver={(e)=> {e.target.style.backgroundColor = 'blue'; console.log(e)}}></div>
+        <div className="grid--item" 
+            style = {{
+                color:props.color
+            }}
+            onMouseLeave={props.onMouseEnter}
+            onMouseEnter={props.onMouseLeave}
+        ></div>
     )
 }
 
