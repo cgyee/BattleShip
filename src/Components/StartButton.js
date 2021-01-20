@@ -8,4 +8,15 @@ const StartButton = () => {
         </div>
     )
 }
-export default StartButton;
+
+const ChangeAxisButton = (props) => {
+    return (
+        <div className="buttonContainer">
+            <button
+                onClick={()=> props.setAxis(prevState=> !prevState)}>
+                    Change Axis
+            </button>
+        </div>
+    )
+}
+export {StartButton, ChangeAxisButton};

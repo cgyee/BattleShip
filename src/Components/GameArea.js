@@ -1,14 +1,15 @@
-import React from 'react';
-import BoardArea from './BoardArea';
-import StartButton from './StartButton';
+import React, { useState } from 'react';
+import Grid from './Grid';
+import ButtonsContainer from './ButtonsContainer';
 
 const GameArea = () => {
+    const [isHorizontal, setAxis] = useState(true);
     return (
         <div className="container">
             <div className="gameContainer">
-                <BoardArea />
-                <StartButton />
-                <BoardArea />
+                <Grid isHorizontal={isHorizontal}/>
+                <ButtonsContainer setAxis={setAxis}/>
+                <Grid />
             </div>
         </div>
     )
