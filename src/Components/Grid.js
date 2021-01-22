@@ -6,9 +6,9 @@ const Grid = (props) => {
     // const gridItems = [];
     const gridItems = new Array(64).fill('white');
     const [hovered, setHoverd] = useState([]);
+    const [ships, setShips] = useState([]);
     
     const mouseEnterHandler = (index) => {
-        //check to see if is within range for horizontal axis
         const increment = props.isHorizontal ? 1 : 8;
 
         if((index % 8 + 4  <= 8 && props.isHorizontal) || 
@@ -18,22 +18,32 @@ const Grid = (props) => {
                 locations.push(index + i);
             }
             setHoverd(locations);
-            console.log(locations);
         }
     }
 
     const mouseLeaveHandler = () => {
         setHoverd([]);
-        console.log('leave');
+    }
+
+    const toCoordinates = (index) => {
+        const x = Math.floor(index / 8);
+        const y = index % 8;
+        return [x, y];
     }
     
     const items = gridItems.map((color, i) => {
         return (
+            ships.includes(i) ?
+            <GridItem 
+                key={i}
+                onClick={() => console.log('ships',ships)}
+            />:
             <GridItem 
                 key={i}
                 highlight={hovered.includes(i)}
                 onMouseLeave={() => mouseLeaveHandler()}
                 onMouseEnter={() => mouseEnterHandler(i)}
+                onClick={()=> setShips(prevState=> [...prevState, ...hovered])}
             />
         )
     })

@@ -5,7 +5,7 @@ const Ship = require('../Ship');
 test('board array is created', () => {
     const gb = Gameboard();
     
-    expect(gb.board[0].length).toBe(10);
+    expect(gb.board[0].length).toBe(8);
 });
 
 test('board array is working as intended', () => {

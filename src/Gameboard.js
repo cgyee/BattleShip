@@ -4,8 +4,8 @@ const Gameboard = () => {
     let isVertical = true;
     let shipRegistry = [];
 
-    for(let i = 0; i < 10; i++) {
-        board.push(new Array(10));
+    for(let i = 0; i < 8; i++) {
+        board.push(new Array(8));
     }
 
     const toggleDirection = () => {
